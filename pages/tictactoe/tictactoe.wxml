@@ -1,0 +1,9 @@
+<!--tictactoe.wxml-->
+<view class="page">
+	<view class="page__hd">
+    <view class="page__title">{{title}}</view>
+    <view class="page__desc">{{desc}}</view>
+  </view><!--页头-->
+	<view class="page__bd"></view><!--主体-->
+	<view></view><!--未设置页脚-->
+</view>

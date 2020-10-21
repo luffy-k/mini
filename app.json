@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/demo/demo",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#f5f5d5",
+    "navigationBarTitleText": "MY APP",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor": "",
+    "borderStyle": "black",
+    "selectedColor": "#07c160",
+    "color": "#aaaaaa",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/home.png",
+        "selectedIconPath": "static/images/home-fill.png",
+        "text": "Home"
+      },
+      {
+        "pagePath": "pages/demo/demo",
+        "iconPath": "static/images/all.png",
+        "selectedIconPath": "static/images/all-fill.png",
+        "text": "Demo"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
