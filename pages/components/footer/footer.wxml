@@ -1,0 +1,5 @@
+<view class="page__ft weui-footer">
+  <view>{{footerText}}</view>
+  <view class="theme-btn" style="backgroundImage:{{themeImg}}"></view>
+</view>
+<slot></slot>

@@ -1,0 +1,9 @@
+.theme-btn{
+  /* display: inline-block; */
+  width: 24px; 
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: bottom;
+}
