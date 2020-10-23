@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "Demo",
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#EDEDED",
+  "usingComponents": {
+    "footer": "../components/footer/footer"
+  }
 }

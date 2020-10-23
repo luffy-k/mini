@@ -4,10 +4,11 @@ const app = getApp()
 
 Page({
   data: {
+    footerText: '',
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +17,10 @@ Page({
     })
   },
   onLoad: function () {
+    const { footerText } = app.globalData;
+    if (footerText) {
+      this.setData({footerText})
+    }
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

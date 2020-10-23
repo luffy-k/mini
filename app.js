@@ -1,5 +1,31 @@
 //app.js
+require('./libs/mixins/Mixins');
+
+const themePages = [];
+
 App({
+  globalData: {
+    userInfo: null,
+    footerText: 'Copyright © Jie_',
+    theme: 'light', // dark
+  },
+  themeChanged(theme) {
+    this.globalData.theme = theme;
+    themePages.forEach((page) => {
+      page.themeChanged(theme);
+    });
+  },
+  watchThemePages(page) {
+    if (themePages.indexOf(page) < 0) {
+      themePages.push(page);
+    }
+  },
+  unWatchThemePages(page) {
+    const index = themePages.indexOf(page);
+    if (index > -1) {
+      themePages.splice(index, 1);
+    }
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -32,8 +58,5 @@ App({
         }
       }
     })
-  },
-  globalData: {
-    userInfo: null
   }
 })

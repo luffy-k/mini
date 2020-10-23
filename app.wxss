@@ -1,7 +1,11 @@
-@import "weui.wxss";
-
 /**app.wxss**/
-.container {
+@import './libs/weui/weui.wxss';
+
+.weui-flex__column{
+  flex-direction: column;
+}
+
+/* .container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -9,4 +13,4 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}  */

@@ -1,23 +1,24 @@
 // demo.js
-
 Page({
+  mixins: [require('../mixins/themeChanged')],
   data: {
     title: 'Demo',
-    desc: ''
+    desc: 'This is the description about...',
+    content: 'Here is the content!\n1.\n2.\n3.\n...',
   },
-  onLoad: function(options) {
+  onLoad: function (options) {
     // Do some initialize when page load.
   },
-  onShow: function() {
+  onShow: function () {
     // Do something when page show.
   },
-  onReady: function() {
+  onReady: function () {
     // Do something when page ready.
   },
-  onHide: function() {
+  onHide: function () {
     // Do something when page hide.
   },
-  onUnload: function() {
+  onUnload: function () {
     // Do something when page close.
   },
 });
