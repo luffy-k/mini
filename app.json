@@ -10,11 +10,11 @@
     "backgroundColor": "#FFF",
     "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#FFF",
-    "navigationBarTitleText": "MY APP",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "navigationBarTitleText": "MY APP"
   },
   "tabBar": {
-    "backgroundColor": "light",
+    "backgroundColor": "#FFF",
     "borderStyle": "black",
     "selectedColor": "#07c160",
     "color": "#aaaaaa",

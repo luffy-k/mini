@@ -9,6 +9,6 @@
     <text>{{content}}</text>
   </view>
   <!--主体-->
-  <footer></footer>
+  <footer barBG="#EDEDED"></footer>
   <!--页脚-->
 </view>

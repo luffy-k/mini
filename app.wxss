@@ -5,6 +5,21 @@
   flex-direction: column;
 }
 
+.weui-flex__column-reverse{
+  flex-direction: column-reverse;
+}
+
+.d-flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mx8{
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 /* .container {
   height: 100%;
   display: flex;

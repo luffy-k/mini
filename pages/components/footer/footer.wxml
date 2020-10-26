@@ -1,5 +1,5 @@
-<view class="page__ft weui-footer">
+<view class="page__ft weui-footer d-flex-center {{isColumn && 'weui-flex__column-reverse'}}">
   <view>{{footerText}}</view>
-  <view class="theme-btn" style="backgroundImage:{{themeImg}}"></view>
+  <view class="theme-btn mx8" style="background-image:{{themeImg}}" bindtap="themeClick"></view>
 </view>
 <slot></slot>
