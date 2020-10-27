@@ -1,4 +1,8 @@
 {
   "navigationBarTitleText": "TicTacToe",
-  "usingComponents": {}
+  "backgroundColor": "#f5f5d5",
+  "navigationBarBackgroundColor": "#f5f5d5",
+  "usingComponents": {
+    "footer": "../components/footer/footer"
+  }
 }

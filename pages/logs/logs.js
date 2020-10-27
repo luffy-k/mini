@@ -2,6 +2,7 @@
 const util = require('../../utils/util.js')
 
 Page({
+  mixins: [require('../mixins/themeChanged')],
   data: {
     logs: []
   },

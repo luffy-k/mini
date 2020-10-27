@@ -3,24 +3,14 @@
 const app = getApp()
 
 Page({
+  mixins: [require('../mixins/themeChanged')],
   data: {
-    footerText: '',
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad: function () {
-    const { footerText } = app.globalData;
-    if (footerText) {
-      this.setData({footerText})
-    }
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -47,6 +37,12 @@ Page({
         }
       })
     }
+  },
+  //事件处理函数
+  bindViewTap: function() {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
   },
   getUserInfo: function(e) {
     console.log(e)

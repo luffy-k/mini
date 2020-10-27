@@ -1,16 +1,21 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class="page page-transparent weui-flex weui-flex__column" data-weui-theme="{{theme}}">
+  <view class="page__hd"></view>
+  <view class="page__bd page__bd_spacing weui-flex__item">
+    <view class="d-flex-center weui-flex__column">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称
+      </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="user-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="text-gray">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <view class="user-motto text-center">
+      <text>{{motto}}</text>
+      <view class="text-12 text-gray">（这是官方首页，没改动，加了一个「小月亮」）</view>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <view class="weui-footer">
-    <view class="weui-footer__text">{{footerText}}</view>
-  </view>
+  <!--主体-->
+  <footer tabBar="{{true}}" showText="{{false}}"></footer>
+  <!--页脚-->
 </view>

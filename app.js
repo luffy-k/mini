@@ -6,7 +6,7 @@ const themePages = [];
 App({
   globalData: {
     userInfo: null,
-    footerText: 'Copyright © Jie_',
+    footerText: 'Copyright © 2020 Jie_',
     theme: 'light', // dark
   },
   themeChanged(theme) {

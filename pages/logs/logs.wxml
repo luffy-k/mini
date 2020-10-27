@@ -1,6 +1,11 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="page page-transparent" data-weui-theme="{{theme}}">
+  <view class="page__bd weui-flex weui-flex__column log-list">
+    <block wx:for="{{logs}}" wx:for-item="log" wx:key="index">
+      <text class="log-item">{{index + 1}}. {{log}}</text>
+    </block>
+  </view>
+  <!--主体-->
+  <footer showText="{{false}}" showTheme="{{false}}"></footer>
+  <!--页脚-->
 </view>

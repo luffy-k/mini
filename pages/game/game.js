@@ -1,19 +1,12 @@
 // game.js
-//获取应用实例
-const app = getApp()
-
 Page({
+  mixins: [require('../mixins/themeChanged')],
   data: {
-    footerText: '',
     title: 'Game',
     desc: '',
   },
   onLoad: function(options) {
     // Do some initialize when page load.
-    const { footerText } = app.globalData;
-    if (footerText) {
-      this.setData({footerText})
-    }
   },
   onShow: function() {
     // Do something when page show.

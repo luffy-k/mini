@@ -1,6 +1,6 @@
 .theme-btn{
-  width: 19px; 
-  height: 19px;
+  width: 16px; 
+  height: 16px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

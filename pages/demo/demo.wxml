@@ -7,8 +7,9 @@
   <!--页头-->
   <view class="page__bd page__bd_spacing weui-flex__item">
     <text>{{content}}</text>
+    <view class="text-12 text-gray">（这是创建的Demo，所有页面都可以基于Demo改造！）^_^</view>
   </view>
   <!--主体-->
-  <footer barBG="#EDEDED"></footer>
+  <footer tabBar="{{true}}" topBarBG="#EDEDED"></footer>
   <!--页脚-->
 </view>

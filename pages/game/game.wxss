@@ -1,1 +1,4 @@
 /* game.wxss */
+.page[data-weui-theme=light]{
+  background-color: #f5f5d5;
+}

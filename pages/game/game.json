@@ -2,5 +2,7 @@
   "navigationBarTitleText": "Game",
   "backgroundColor": "#f5f5d5",
   "navigationBarBackgroundColor": "#f5f5d5",
-  "usingComponents": {}
+  "usingComponents": {
+    "footer": "../components/footer/footer"
+  }
 }
