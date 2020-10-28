@@ -5,10 +5,12 @@ const themePages = [];
 
 App({
   globalData: {
+    systemInfo: null,
     userInfo: null,
     footerText: 'Copyright © 2020 Jie_',
     theme: 'light', // dark
   },
+  // 切换主题相关
   themeChanged(theme) {
     this.globalData.theme = theme;
     themePages.forEach((page) => {
@@ -24,6 +26,16 @@ App({
     const index = themePages.indexOf(page);
     if (index > -1) {
       themePages.splice(index, 1);
+    }
+  },
+  // 获取系统信息
+  getSystemInfo() {
+    try {
+      const res = wx.getSystemInfoSync();
+      this.globalData.systemInfo = res;
+    } catch (e) {
+      // Do something when catch error
+      console.error('[app.getSystemInfo]', e);
     }
   },
   onLaunch: function () {
@@ -58,5 +70,7 @@ App({
         }
       }
     })
+    
+    this.getSystemInfo();
   }
 })

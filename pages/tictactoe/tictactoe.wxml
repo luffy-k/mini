@@ -6,9 +6,16 @@
   </view>
   <!--页头-->
   <view class="page__bd page__bd_spacing weui-flex__item">
-
+    <view class="game-container d-flex-center weui-flex__column">
+      <view class="game-box">
+        <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
+        <view class="game-board" style="width:{{size}};height:{{size}}">
+          <view class="game-square" wx:for="{{squares}}" wx:key="index">{{item + index}}</view>
+        </view>
+      </view>
+    </view>
   </view>
   <!--主体-->
-  <footer topBarBG="#f5f5d5" showTheme="{{false}}"></footer>
+  <footer topBarBG="#f5f5d5" showTheme="{{true}}"></footer>
   <!--页脚-->
 </view>

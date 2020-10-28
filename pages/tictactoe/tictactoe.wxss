@@ -1,4 +1,8 @@
 /* tictactoe.wxss */
-.page[data-weui-theme=light]{
-  background-color: #f5f5d5;
+@import '../game/game.wxss';
+
+.game-board{
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(3, 30%);
+  grid-gap: 2%;
 }
