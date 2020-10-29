@@ -1,0 +1,7 @@
+function indexOf(array, value){
+  if(!array || !array.length){
+    return false
+  }
+  return array.indexOf(value) > -1;
+}
+module.exports.indexOf = indexOf;

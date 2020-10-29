@@ -6,6 +6,6 @@
     </block>
   </view>
   <!--主体-->
-  <footer showText="{{false}}" showTheme="{{false}}"></footer>
+  <footer showTheme="{{false}}"></footer>
   <!--页脚-->
 </view>

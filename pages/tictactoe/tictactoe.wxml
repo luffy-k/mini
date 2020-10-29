@@ -9,13 +9,14 @@
     <view class="game-container d-flex-center weui-flex__column">
       <view class="game-box">
         <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
-        <view class="game-board" style="width:{{size}};height:{{size}}">
-          <view class="game-square" wx:for="{{squares}}" wx:key="index">{{item + index}}</view>
+        <view class="game-board" style="{{boardStyle}}">
+          <wxs src="../../utils/indexOf.wxs" module="tools"></wxs>
+          <view class="game-square d-flex-center {{tools.indexOf(winLines, index) ? 'highlight' : ''}}" wx:for="{{squares}}" wx:key="index" data-idx="{{index}}" bindtap="squareClick">{{item}}</view>
         </view>
       </view>
     </view>
   </view>
   <!--主体-->
-  <footer topBarBG="#f5f5d5" showTheme="{{true}}"></footer>
+  <footer topBarBG="#f5f5d5"></footer>
   <!--页脚-->
 </view>

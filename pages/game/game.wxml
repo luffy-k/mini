@@ -14,6 +14,6 @@
     </view>
   </view>
   <!--主体-->
-  <footer tabBar="{{true}}" topBarBG="#f5f5d5" showTheme="{{false}}"></footer>
+  <footer tabBar="{{true}}" topBarBG="#f5f5d5"></footer>
   <!--页脚-->
 </view>
