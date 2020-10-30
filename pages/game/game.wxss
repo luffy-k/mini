@@ -18,6 +18,24 @@
   height: 100%;
 }
 
+.game-top {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.game-info{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 12% 55% 12%;
+  grid-template-rows: 1fr;
+  grid-gap: 2%;
+}
+
+.game-info > view {
+  background-color: var(--weui-BG-4);
+}
+
 .game-box{
   position: relative;
   z-index: 0;

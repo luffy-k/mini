@@ -1,12 +1,19 @@
 <!--tictactoe.wxml-->
 <view class="page weui-flex weui-flex__column" data-weui-theme="{{theme}}">
-  <view class="page__hd">
+  <!-- <view class="page__hd">
     <view class="page__title">{{title}}</view>
     <view class="page__desc">{{desc}}</view>
-  </view>
+  </view> -->
   <!--页头-->
   <view class="page__bd page__bd_spacing weui-flex__item">
     <view class="game-container d-flex-center weui-flex__column">
+      <view class="game-top">
+        <view class="game-info" style="{{topStyle}}">
+          <view></view>
+          <view></view>
+          <view></view>
+        </view>
+      </view>
       <view class="game-box">
         <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
         <view class="game-board" style="{{boardStyle}}">
@@ -14,6 +21,7 @@
           <view class="game-square d-flex-center {{tools.indexOf(winLines, index) ? 'highlight' : ''}}" wx:for="{{squares}}" wx:key="index" data-idx="{{index}}" bindtap="squareClick">{{item}}</view>
         </view>
       </view>
+      <view class="game-bottom"></view>
     </view>
   </view>
   <!--主体-->
