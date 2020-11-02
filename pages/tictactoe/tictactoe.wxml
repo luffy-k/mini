@@ -8,20 +8,29 @@
   <view class="page__bd page__bd_spacing weui-flex__item">
     <view class="game-container d-flex-center weui-flex__column">
       <view class="game-top">
-        <view class="game-info" style="{{topStyle}}">
-          <view></view>
-          <view></view>
-          <view></view>
+        <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
+        <view class="game-info" style="{{infoStyle}}">
+          <view class="game-square d-flex-center"></view>
+          <view class="game-square d-flex-center">NEXT PLAYER: X</view>
+          <view class="game-square d-flex-center"></view>
         </view>
       </view>
       <view class="game-box">
         <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
         <view class="game-board" style="{{boardStyle}}">
           <wxs src="../../utils/indexOf.wxs" module="tools"></wxs>
-          <view class="game-square d-flex-center {{tools.indexOf(winLines, index) ? 'highlight' : ''}}" wx:for="{{squares}}" wx:key="index" data-idx="{{index}}" bindtap="squareClick">{{item}}</view>
+          <view class="game-square d-flex-center {{tools.indexOf(winLines, index) ? 'active' : ''}}" wx:for="{{squares}}" wx:key="index" data-idx="{{index}}" bindtap="squareClick">{{item}}</view>
         </view>
       </view>
-      <view class="game-bottom"></view>
+      <view class="game-bottom">
+        <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
+        <view class="game-action" style="{{actionStyle}}">
+          <view class="game-square d-flex-center">ME</view>
+          <view class="game-square d-flex-center">AI</view>
+          <view class="game-square d-flex-center">2P</view>
+          <view class="game-square d-flex-center">RS</view>
+        </view>
+      </view>
     </view>
   </view>
   <!--主体-->

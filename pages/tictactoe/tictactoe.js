@@ -6,8 +6,9 @@ Page({
   data: {
     title: 'TicTacToe',
     desc: '',
-    topStyle: '',
+    infoStyle: '',
     boardStyle: '',
+    actionStyle: '',
     borders: Array(4).fill(1),
     squares: Array(9).fill(''),
     winLines: [],
@@ -29,8 +30,9 @@ Page({
       boardStyle = 'font-size:24px;';
     }
     boardStyle += `width:${size}px;height:${size}px`;
-    const topStyle = `width:${size}px;height:${size*0.12}px`;
-    this.setData({ boardStyle, topStyle });
+    const infoStyle = `width:${size}px;height:${size*0.14}px`;
+    const actionStyle = `width:${size}px;height:${size*0.22}px`;
+    this.setData({ boardStyle, infoStyle, actionStyle });
   },
   onShow: function () {
     // Do something when page show.
