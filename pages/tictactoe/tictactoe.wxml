@@ -6,13 +6,17 @@
   </view> -->
   <!--页头-->
   <view class="page__bd page__bd_spacing weui-flex__item">
-    <view class="game-container d-flex-center weui-flex__column">
+    <view class="game-container d-flex-center weui-flex__column {{isPad?'text-24':''}}">
       <view class="game-top">
         <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
         <view class="game-info" style="{{infoStyle}}">
-          <view class="game-square d-flex-center"></view>
+          <view class="game-square btn d-flex-center">
+            <text class="iconfont icon-rotate-left"></text>
+          </view>
           <view class="game-square d-flex-center">NEXT PLAYER: X</view>
-          <view class="game-square d-flex-center"></view>
+          <view class="game-square btn d-flex-center">
+            <text class="iconfont icon-rotate-right"></text>
+          </view>
         </view>
       </view>
       <view class="game-box">
@@ -28,7 +32,7 @@
           <view class="game-square d-flex-center">ME</view>
           <view class="game-square d-flex-center">AI</view>
           <view class="game-square d-flex-center">2P</view>
-          <view class="game-square d-flex-center">RS</view>
+          <view class="game-square btn d-flex-center">RS</view>
         </view>
       </view>
     </view>

@@ -29,7 +29,7 @@ Component({
   },
   data: {
     footerText: '',
-    themeImg: '',
+    themeIcon: '',
   },
   lifetimes: {
     attached: function () {
@@ -62,9 +62,8 @@ Component({
     }
   },
   methods: {
-    getThemeImg: function (theme) {
-      const icon = theme === 'light' ? 'night' : 'day';
-      return `url(../../../static/images/weather-${icon}.png)`;
+    getThemeIcon: function (theme) {
+      return theme === 'light' ? 'night' : 'day';
     },
     getTabBarStyle: function (theme) {
       return theme === 'light' ? {
@@ -96,7 +95,7 @@ Component({
       wx.setNavigationBarColor(this.getNavigationBarStyle(theme));
       // 切换图标
       if(showTheme){
-        this.setData({ themeImg: this.getThemeImg(theme) });
+        this.setData({ themeIcon: this.getThemeIcon(theme) });
       }
       // 切换底部tabBar
       if(tabBar){

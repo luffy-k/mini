@@ -1,7 +1,8 @@
 /**app.wxss**/
 @import './libs/weui/weui.wxss';
+@import './libs/iconfont/iconfont.wxss';
 
-/* 覆盖weui样式 */
+/* weui样式 */
 .weui-cell:before {
   right: 16px;
 }

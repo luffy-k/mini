@@ -1,5 +1,7 @@
 <view class="page__ft weui-footer d-flex-center {{isColumn?'weui-flex__column-reverse':''}}">
   <view wx:if="{{showText}}" class="weui-footer__text">{{footerText}}</view>
-  <view wx:if="{{showTheme}}" class="theme-btn" style="background-image:{{themeImg}}" bindtap="themeClick"></view>
+  <view wx:if="{{showTheme}}" class="theme-btn"  bindtap="themeClick">
+    <text class="iconfont icon-weather-{{themeIcon}}"></text>
+  </view>
 </view>
 <slot></slot>

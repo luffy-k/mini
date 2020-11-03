@@ -6,6 +6,7 @@ Page({
   data: {
     title: 'TicTacToe',
     desc: '',
+    isPad: false,
     infoStyle: '',
     boardStyle: '',
     actionStyle: '',
@@ -21,18 +22,18 @@ Page({
     const { systemInfo } = app.globalData;
     const width = systemInfo.screenWidth;
     const height = systemInfo.screenHeight;
-    let boardStyle = '';
+    let isPad = false;
     let size = width < 700 ? width - 30 : 520;
     if (height < 520) {
       size = height - 30;
     }
     if (size === 520) {
-      boardStyle = 'font-size:24px;';
+      isPad = true;
     }
-    boardStyle += `width:${size}px;height:${size}px`;
+    const boardStyle = `width:${size}px;height:${size}px`;
     const infoStyle = `width:${size}px;height:${size*0.14}px`;
     const actionStyle = `width:${size}px;height:${size*0.22}px`;
-    this.setData({ boardStyle, infoStyle, actionStyle });
+    this.setData({ boardStyle, infoStyle, actionStyle, isPad });
   },
   onShow: function () {
     // Do something when page show.
