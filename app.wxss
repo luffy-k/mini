@@ -29,12 +29,24 @@
   align-items: center;
 }
 
+.mr16{
+  margin-right: 16px;
+}
+
 .text-12{
   font-size: 12px;
 }
 
+.text-20{
+  font-size: 20px;
+}
+
 .text-24{
   font-size: 24px;
+}
+
+.text-green{
+  color: #07c160;
 }
 
 .text-gray{

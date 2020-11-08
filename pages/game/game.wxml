@@ -8,6 +8,9 @@
   <view class="page__bd page__bd_spacing weui-flex__item">
     <view class="weui-cells weui-cells_after-title">
       <navigator url="/pages/tictactoe/tictactoe" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <view class="iconfont icon-tic-tac-toe text-20 text-green mr16" style="line-height:20px"></view>
+        </view>
         <view class="weui-cell__bd">TicTacToe</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </navigator>

@@ -7,11 +7,14 @@
   grid-gap: 2%;
   padding: 3% 0;
 }
-.game-info > .game-square{
-  font-size: 1.2em;
+.game-info .txt{
+  width: 1.2em;
 }
 .game-info .iconfont{
   font-size: 1.4em;
+}
+.game-info > .game-square{
+  font-size: 1.2em;
 }
 .game-info > .game-square:nth-child(2n+1){
   line-height: 1;
@@ -57,7 +60,7 @@
 }
 
 .game-action{
-  grid-template-columns: repeat(4, 22%);
+  grid-template-columns: 70% 22%;
   grid-template-rows: 1fr;
   grid-gap: 2%;
   padding: 3% 0;
@@ -65,19 +68,16 @@
 .game-action > .game-square{
   font-size: 2em;
 }
-.game-action > .game-square:nth-child(1){
+.game-option{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.game-option > view:nth-child(1){
   background-image: linear-gradient(45deg,#f43f3b,#ec008c);
 }
-.game-action > .game-square:nth-child(2){
+.game-option > view:nth-child(2){
   background-image: linear-gradient(45deg,#ff9700,#ed1c24);
 }
-.game-action > .game-square:nth-child(3){
+.game-option > view:nth-child(3){
   background-image: linear-gradient(45deg,#ec008c,#6739b6);
-}
-
-
-/* THEME dark */
-[data-weui-theme=dark] .game-square:not(.btn){
-  background-image: unset!important;
-  background-color: var(--weui-BG-4)!important;
 }

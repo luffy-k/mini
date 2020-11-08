@@ -16,6 +16,8 @@ Page({
     history: [],
     step: 0,
     xIsNext: true,
+    status: 'NEXT PLAYER: ',
+    player: 'X',
   },
   onLoad: function (options) {
     // Do some initialize when page load.
@@ -31,8 +33,8 @@ Page({
       isPad = true;
     }
     const boardStyle = `width:${size}px;height:${size}px`;
-    const infoStyle = `width:${size}px;height:${size*0.14}px`;
-    const actionStyle = `width:${size}px;height:${size*0.22}px`;
+    const infoStyle = `width:${size}px;height:${size * 0.14}px`;
+    const actionStyle = `width:${size}px;height:${size * 0.22}px`;
     this.setData({ boardStyle, infoStyle, actionStyle, isPad });
   },
   onShow: function () {
@@ -50,24 +52,37 @@ Page({
   // 点击事件
   squareClick: function (event) {
     const { idx } = event.currentTarget.dataset;
-    const { squares, winLines, xIsNext, history } = this.data;
+    const { squares, winLines, xIsNext, history, step } = this.data;
     if (winLines.length || squares[idx]) {
       return;
     }
     squares[idx] = xIsNext ? 'X' : 'O';
-    history.push({
+    history.splice(step, history.length - step, {
       k: idx, v: squares[idx]
     });
     let temp;
-    if(history.length > 4){
+    if (history.length > 4) {
       temp = this.getWinLines(squares);
+    }
+    let status, player;
+    if (temp) {
+      status = 'WINNER: ';
+      player = squares[idx];
+    } else {
+      status = 'NEXT PLAYER: ';
+      player = !xIsNext ? 'X' : 'O';
     }
     this.setData({
       squares, history,
       step: history.length,
       xIsNext: !xIsNext,
-      winLines: temp || []
+      winLines: temp || [],
+      status, player
     });
+  },
+  // 设置状态
+  getStatus(squares){
+
   },
   // 获取胜出连线
   getWinLines(squares) {
@@ -88,5 +103,33 @@ Page({
       }
     }
     return null;
-  }
+  },
+  // 撤回事件
+  undo: function () {
+    const { history, step, squares, xIsNext } = this.data;
+    if (!step) {
+      return;
+    }
+    const { k, v } = history[step - 1];
+    const status = 'NEXT PLAYER: ';
+    const player = v;
+    squares[k] = "";
+    this.setData({
+      squares,
+      step: step - 1,
+      xIsNext: !xIsNext,
+      status, player
+    });
+  },
+  // 恢复事件
+  redo: function () {
+    const { history, step, squares, xIsNext } = this.data;
+    if(step === history.length){
+      return;
+    }
+    const { k, v } = history[step];
+    squares[k] = v;
+    
+
+  },
 });

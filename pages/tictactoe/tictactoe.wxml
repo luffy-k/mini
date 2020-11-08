@@ -10,11 +10,12 @@
       <view class="game-top">
         <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
         <view class="game-info" style="{{infoStyle}}">
-          <view class="game-square btn d-flex-center">
+          <view class="game-square btn d-flex-center" bindtap="undo">
             <text class="iconfont icon-rotate-left"></text>
           </view>
-          <view class="game-square d-flex-center">NEXT PLAYER: X</view>
-          <view class="game-square btn d-flex-center">
+          <view class="game-square d-flex-center">{{status}}
+            <text class="txt text-center {{winLines.length?'active':''}}">{{player}}</text></view>
+          <view class="game-square btn d-flex-center" bindtap="redo">
             <text class="iconfont icon-rotate-right"></text>
           </view>
         </view>
@@ -29,9 +30,11 @@
       <view class="game-bottom">
         <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
         <view class="game-action" style="{{actionStyle}}">
-          <view class="game-square d-flex-center">ME</view>
-          <view class="game-square d-flex-center">AI</view>
-          <view class="game-square d-flex-center">2P</view>
+          <view class="game-square game-option">
+            <view class="d-flex-center">ME</view>
+            <view class="d-flex-center">AI</view>
+            <view class="d-flex-center active">2P</view>
+          </view>
           <view class="game-square btn d-flex-center">RS</view>
         </view>
       </view>
