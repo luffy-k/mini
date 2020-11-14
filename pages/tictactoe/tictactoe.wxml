@@ -14,7 +14,8 @@
             <text class="iconfont icon-rotate-left"></text>
           </view>
           <view class="game-square d-flex-center">{{status}}
-            <text class="txt text-center {{winLines.length?'active':''}}">{{player}}</text></view>
+            <text class="txt text-center {{winLines.length?'active':''}}">{{player}}</text>
+          </view>
           <view class="game-square btn d-flex-center" bindtap="redo">
             <text class="iconfont icon-rotate-right"></text>
           </view>
@@ -35,7 +36,7 @@
             <view class="d-flex-center">AI</view>
             <view class="d-flex-center active">2P</view>
           </view>
-          <view class="game-square btn d-flex-center">RS</view>
+          <view class="game-square btn d-flex-center" bindtap="reset">RS</view>
         </view>
       </view>
     </view>

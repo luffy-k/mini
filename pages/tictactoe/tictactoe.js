@@ -60,29 +60,35 @@ Page({
     history.splice(step, history.length - step, {
       k: idx, v: squares[idx]
     });
+    const data = this.getStatusData(step+1, idx, true);
+    this.setData({
+      history,
+      ...data
+    });
+  },
+  // 获取状态
+  getStatusData(step, idx, isNew){
+    const { squares, history, xIsNext } = this.data;
     let temp;
-    if (history.length > 4) {
+    if(step > 4 && (isNew || step === history.length)){
       temp = this.getWinLines(squares);
     }
     let status, player;
-    if (temp) {
+    if (temp && idx) {
       status = 'WINNER: ';
       player = squares[idx];
-    } else {
+    } else if(step === 9){
+      status = 'Tie Game!';
+      player = '';
+    }else{
       status = 'NEXT PLAYER: ';
       player = !xIsNext ? 'X' : 'O';
     }
-    this.setData({
-      squares, history,
-      step: history.length,
-      xIsNext: !xIsNext,
+    return {
       winLines: temp || [],
-      status, player
-    });
-  },
-  // 设置状态
-  getStatus(squares){
-
+      xIsNext: !xIsNext,
+      step, squares, status, player
+    };
   },
   // 获取胜出连线
   getWinLines(squares) {
@@ -106,20 +112,14 @@ Page({
   },
   // 撤回事件
   undo: function () {
-    const { history, step, squares, xIsNext } = this.data;
+    const { history, step, squares } = this.data;
     if (!step) {
       return;
     }
-    const { k, v } = history[step - 1];
-    const status = 'NEXT PLAYER: ';
-    const player = v;
+    const { k } = history[step - 1];
     squares[k] = "";
-    this.setData({
-      squares,
-      step: step - 1,
-      xIsNext: !xIsNext,
-      status, player
-    });
+    const data = this.getStatusData(step-1);
+    this.setData(data);
   },
   // 恢复事件
   redo: function () {
@@ -129,7 +129,19 @@ Page({
     }
     const { k, v } = history[step];
     squares[k] = v;
-    
-
+    const data = this.getStatusData(step+1, k);
+    this.setData(data);
+  },
+  // 重置
+  reset: function () {
+    this.setData({
+      squares: Array(9).fill(''),
+      winLines: [],
+      history: [],
+      step: 0,
+      xIsNext: true,
+      status: 'NEXT PLAYER: ',
+      player: 'X'
+    });
   },
 });
