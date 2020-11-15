@@ -31,10 +31,8 @@
       <view class="game-bottom">
         <view class="game-border" wx:for="{{borders}}" wx:key="index"></view>
         <view class="game-action" style="{{actionStyle}}">
-          <view class="game-square game-option">
-            <view class="d-flex-center">ME</view>
-            <view class="d-flex-center">AI</view>
-            <view class="d-flex-center active">2P</view>
+          <view class="game-square game-option" bindtap="optionClick">
+            <view wx:for="{{modes}}" wx:key="index" data-tag="{{item}}" class="d-flex-center {{item==mode?'active':''}}">{{item}}</view>
           </view>
           <view class="game-square btn d-flex-center" bindtap="reset">RS</view>
         </view>
